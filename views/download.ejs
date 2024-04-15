@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download | InShare - File Sharing Made Easy</title>
+    <link rel="stylesheet" href="../css/download.css">
+</head>
+
+<body>
+    <!-- <img src="/img/logo.png" alt="Inshare logo" class="logo"> -->
+    <nav class="navbar">
+        <a href="/" ><img class="logo" src="../img/logo.png" alt=""></a>
+    </nav>
+
+    <section class="download-container">
+        <img class="download__icon" src="/img/download-sd.svg" alt="inshare-download">
+            <h2>Your file is ready to download</h2>
+            <div class="download__meta">
+                <h4><%= fileInfo.fileName %></h4>
+                <small><%= parseInt(fileInfo.fileSize/1000) %> KB</small>
+            </div>
+            <div class="send-btn-container">
+                <a href="<%= fileInfo.downloadLink %>" class="button">Download</a>
+            </div>
+    </section>
+
+
+</body>
+
+</html>

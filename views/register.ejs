@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download | InShare - File Sharing Made Easy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+ <div class="svg-top">
+  
+</div>
+<div class="svg-bottom">
+ 
+</div>
+
+<section class="container">
+  <section class="wrapper">
+    <header>
+      <img src="../img/logo.png" alt="Inshare logo" class="inshare-logo">
+      <h1>Create Account</h1>
+    </header>
+    <%- include ('./partials/messages') %>
+    <section class="main-content">
+      <form action="/users/register" method="POST">
+      	<label for="username" class="form-label">Username</label>
+        <input type="text" name="username" placeholder="username" value="<%= typeof username != 'undefined' ? username : '' %>" required>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" placeholder="email" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" placeholder="pass" value="<%= typeof password != 'undefined' ? password : '' %>" required>
+        <label for="password2" class="form-label">Confirm Password</label>
+        <input type="password" name="password2" placeholder="confirm pass" required>
+        <button>Create Account</button>
+        <div class="auth">
+          Or Signup using <a href="/auth/google"><i class="fab fa-google "></i></a>
+        </div>
+      </form>
+    </section>
+    <footer>
+      <p>Already have an Account? <a href="/login" title="Login">Login</a></p>
+    </footer>
+  </section>
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download | InShare - File Sharing Made Easy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/forgot.js" defer></script>
+</head>
+
+<body>
+  <div class="modal">
+      <div class="modal-content ">
+        <span class="close">&times;</span>
+        <form action="/forgot" class="modal-form" method="POST">
+          <label for="email">Enter your email</label><br>
+          <input type="text" name="email" placeholder="email">
+          <p class="short-message">A reset link will be sent to this email</p>
+          <button class="forgot-button" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+ <div class="svg-top">
+  
+</div>
+<div class="svg-bottom">
+ 
+</div>
+
+<section class="container">
+  <section class="wrapper">
+    <header>
+      <img src="../img/logo.png" alt="Inshare logo" class="inshare-logo">
+      <h1>Login</h1>
+    </header>
+    <section class="main-content">
+      <form action="/users/login" method="POST">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" placeholder="Email">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" placeholder="Password">
+        <button>Login</button>
+        <div class="auth">
+          OR
+          <a href="/auth/google"><i class="fab fa-google "></i></a>
+        </div>
+      </form>
+      <%- include ('./partials/messages') %>
+    </section>
+    <footer>
+      <p><a href="#" class="forgotpass-button">Forgot Password</a></p>
+      <p>Need Account? <a href="/register" title="Register">Register</a></p>
+
+    </footer>
+  </section>
+</section>
+
+</body>
+
+</html>

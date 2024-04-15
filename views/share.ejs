@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InShare - File Sharing Made Easy</title>
+    <link rel="stylesheet" href="/css/share.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="../js/nav.js" defer></script>
+</head>
+
+<body>
+    <div class="toggle">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <nav class="navbar">
+        <div class="logo-div">
+            <a href="/"><img src="../img/logo.png" alt="Inshare logo" class="logo"></a>
+        </div>
+        <% if (user) { %>
+            <ul class="navlinks">
+                <li><a class="link" href="/dashboard">My Account</a></li>
+                <!-- <li><a class="link" href="/about">About</a></li> -->
+            </ul>
+        <% } else {%>
+            <ul class="navlinks">
+                <!-- <a href="/login" class="link"><li>Login</li></a> -->
+            </ul>
+        <% } %>
+    </nav>
+    <div class="main">
+        <div class="image-vector"></div>
+        <section class="upload-container">
+            <form action="">
+                <div class="drop-zone">
+                    <div class="icon-container">
+                        <img src="../assets/file.svg" draggable="false" class="center" alt="File Icon">
+                        <img src="../assets/file.svg" draggable="false" class="left" alt="File Icon">
+                        <img src="../assets/file.svg" draggable="false" class="right" alt="File Icon">
+                    </div>
+                    <input type="file" id="fileInput">
+                    <div class="title">Drop your Files here or, <span id="browseBtn">browse</span></div>
+                </div>
+            </form>
+            <div class="progress-container">
+                <div class="bg-progress"></div>
+
+                <div class="inner-container">
+                    <div class="status">Uploading...</div>
+                    <div class="percent-container">
+                        <span class="percentage" id="progressPercent">0</span>%
+                    </div>
+                    <div class="progress-bar"></div>
+                </div>
+
+            </div>
+            <div class="sharing-container">
+                <p class="expire">Link expires in 24 hrs</p>
+
+
+                <div class="input-container">
+                    <input type="text" id="fileURL" readonly>
+                    <img src="../assets/copy-icon.svg" id="copyURLBtn" alt="copy to clipboard icon">
+                </div>
+
+
+                <p class="email-info">Or Send via Email</p>
+                <div class="email-container">
+                    <form id="emailForm">
+                        <div class="filed">
+                            <label for="fromEmail">Your email</label>
+                            <input type="email" autocomplete="email" required name="from-email" id="fromEmail">
+                        </div>
+
+                        <div class="filed">
+                            <label for="toEmail">Receiver's email</label>
+                            <input type="email" required autocomplete="receiver" name="to-email" id="toEmail">
+                        </div>
+                        <div class="send-btn-container">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- <div class="toast"></div> -->
+    <!-- <img src="../assets/wave.svg" draggable="false" class="wave" alt="File Icon"> -->
+
+    <script src="/js/share.js" defer></script>
+</body>
+
+</html>
